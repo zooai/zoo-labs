@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+/**
+ * Zoo Brand Colors
+ * Zoo Cyan: #06b6d4
+ */
+
+:root {
+  --zoo-cyan: #06b6d4;
+  --zoo-cyan-50: #ecfeff;
+  --zoo-cyan-100: #cffafe;
+  --zoo-cyan-200: #a5f3fc;
+  --zoo-cyan-300: #67e8f9;
+  --zoo-cyan-400: #22d3ee;
+  --zoo-cyan-500: #06b6d4;
+  --zoo-cyan-600: #0891b2;
+  --zoo-cyan-700: #0e7490;
+  --zoo-cyan-800: #155e75;
+  --zoo-cyan-900: #164e63;
+  --zoo-cyan-950: #083344;
+
+  --brand: var(--zoo-cyan);
+  --brand-light: var(--zoo-cyan-400);
+  --brand-dark: var(--zoo-cyan-600);
+  --brand-hover: var(--zoo-cyan-400);
+  --brand-secondary: var(--zoo-cyan-300);
+
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1a1a1a;
+  --bg-card: rgba(23, 23, 23, 0.5);
+  --border: #262626;
+  --border-light: #404040;
+  --text-primary: #fafafa;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+}
+
+@theme {
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-border: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.hero-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, var(--brand) 0%, transparent 70%);
+  opacity: 0.08;
+  filter: blur(100px);
+  pointer-events: none;
+}
