@@ -129,9 +129,17 @@ export function BelugaChat() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70" />
 
       <div className="relative z-10 mx-auto flex h-full max-w-3xl flex-col px-4">
-        <header className="flex items-center gap-3 py-5">
-          <span className="h-2.5 w-2.5 rounded-full bg-brand shadow-[0_0_12px_var(--brand)]" />
-          <h1 className="font-mono text-sm tracking-widest text-text-primary uppercase">Blue · Zoo</h1>
+        <header className="flex items-center justify-between py-5">
+          <div className="flex items-center gap-3">
+            <span className="h-2.5 w-2.5 rounded-full bg-brand shadow-[0_0_12px_var(--brand)]" />
+            <h1 className="font-mono text-sm tracking-widest text-text-primary uppercase">Blue · Zoo</h1>
+          </div>
+          <a
+            href="/open-source"
+            className="font-mono text-xs tracking-widest text-text-secondary uppercase transition-colors hover:text-text-primary"
+          >
+            Open Source
+          </a>
         </header>
 
         <div ref={scroller} className="flex-1 space-y-4 overflow-y-auto pb-4">
