@@ -14,8 +14,22 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://zoolabs.io'),
   title: config.meta.title,
   description: config.meta.description,
+  openGraph: {
+    title: config.meta.title,
+    description: config.meta.description,
+    url: 'https://zoolabs.io',
+    siteName: config.org.name,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: config.meta.title,
+    description: config.meta.description,
+    creator: '@zoolabs',
+  },
 };
 
 export default function RootLayout({
