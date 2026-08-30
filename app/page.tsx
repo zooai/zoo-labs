@@ -36,20 +36,20 @@ async function getRepoData() {
   return { repos: publicRepos, stats, categories, totalFetched: allRepos.length };
 }
 
-function LuxLogo({ className = '' }: { className?: string }) {
+function ZooMark({ className = '' }: { className?: string }) {
   return (
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className={className} aria-label="Zoo">
       <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="2" />
       <text
         x="50"
-        y="58"
+        y="59"
         textAnchor="middle"
         fill="currentColor"
-        fontSize="32"
+        fontSize="34"
         fontWeight="bold"
         fontFamily="system-ui, sans-serif"
       >
-        LUX
+        Z
       </text>
     </svg>
   );
@@ -195,7 +195,7 @@ export default async function Home() {
       <header className="sticky top-0 z-50 border-b border-border bg-bg-primary/80 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <LuxLogo className="w-8 h-8 text-brand" />
+            <ZooMark className="w-8 h-8 text-brand" />
             <span className="font-bold text-xl text-text-primary">{config.org.name}</span>
           </div>
           <nav className="flex items-center gap-6">
