@@ -200,6 +200,12 @@ export default async function Home() {
           </div>
           <nav className="flex items-center gap-6">
             <a
+              href="/chat"
+              className="flex items-center gap-2 rounded-full bg-brand px-4 py-1.5 text-sm font-medium text-black transition-opacity hover:opacity-90"
+            >
+              Chat with Blue
+            </a>
+            <a
               href={config.links.docs}
               className="text-sm text-text-secondary hover:text-text-primary transition-colors"
             >
