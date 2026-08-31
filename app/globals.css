@@ -51,10 +51,19 @@
   --font-mono: var(--font-zen-mono), ui-monospace, monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-sans);
+}
+
+/* Anchored sections clear the fixed header when jumped to. */
+section[id] {
+  scroll-margin-top: 3.5rem;
 }
 
 .hero-glow {

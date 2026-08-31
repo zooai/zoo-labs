@@ -14,13 +14,11 @@ import {
   Star,
   GitFork,
   ExternalLink,
-  Github,
   Code2,
   Package,
   FileText,
   Globe,
   Clock,
-  Eye,
   Scale,
   Blocks,
   Cpu,
@@ -34,25 +32,6 @@ async function getRepoData() {
   const categories = categorizeRepos(publicRepos);
 
   return { repos: publicRepos, stats, categories, totalFetched: allRepos.length };
-}
-
-function ZooMark({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className={className} aria-label="Zoo">
-      <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="2" />
-      <text
-        x="50"
-        y="59"
-        textAnchor="middle"
-        fill="currentColor"
-        fontSize="34"
-        fontWeight="bold"
-        fontFamily="system-ui, sans-serif"
-      >
-        Z
-      </text>
-    </svg>
-  );
 }
 
 function RepoCard({ repo, featured = false }: { repo: GitHubRepo; featured?: boolean }) {
@@ -191,41 +170,8 @@ export default async function Home() {
     <div className="min-h-screen bg-bg-primary">
       <div className="hero-glow" />
 
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border bg-bg-primary/80 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <ZooMark className="w-8 h-8 text-brand" />
-            <span className="font-bold text-xl text-text-primary">{config.org.name}</span>
-          </div>
-          <nav className="flex items-center gap-6">
-            <a
-              href="/"
-              className="flex items-center gap-2 rounded-full bg-brand px-4 py-1.5 text-sm font-medium text-black transition-opacity hover:opacity-90"
-            >
-              Chat with Blue
-            </a>
-            <a
-              href={config.links.docs}
-              className="text-sm text-text-secondary hover:text-text-primary transition-colors"
-            >
-              Docs
-            </a>
-            <a
-              href={config.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              GitHub
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      {/* Hero */}
-      <section className="relative py-20 px-6">
+      {/* Hero — sits below the site header. */}
+      <section className="relative px-6 pt-34 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bg-secondary border border-border mb-6">
             <span className="text-brand font-medium">{config.org.tagline}</span>
@@ -279,41 +225,6 @@ export default async function Home() {
           />
         ))}
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-border bg-bg-secondary">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-            {config.footer.sections.map((section) => (
-              <div key={section.title}>
-                <h3 className="font-semibold text-text-primary mb-4">{section.title}</h3>
-                <ul className="space-y-2">
-                  {section.links.map((link) => (
-                    <li key={link.label}>
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-text-muted hover:text-text-primary transition-colors"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="flex items-center justify-between pt-8 border-t border-border">
-            <p className="text-sm text-text-muted">
-              &copy; {new Date().getFullYear()} {config.footer.copyright.text}
-            </p>
-            <span className="px-3 py-1 text-xs bg-bg-primary text-text-muted rounded-full border border-border">
-              {config.footer.copyright.badge}
-            </span>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

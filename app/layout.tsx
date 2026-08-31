@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { Zen } from '@hanzo/font/sans';
 import { ZenMono } from '@hanzo/font/mono';
 import './globals.css';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 import { config } from '@/lib/config';
-
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://zoolabs.io'),
@@ -33,7 +34,11 @@ export default function RootLayout({
   // --font-sans/--font-mono in globals.css that reference them.
   return (
     <html lang="en" className={`dark ${Zen.variable} ${ZenMono.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
