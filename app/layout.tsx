@@ -1,17 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Zen } from '@hanzo/font/sans';
+import { ZenMono } from '@hanzo/font/mono';
 import './globals.css';
 import { config } from '@/lib/config';
 
-const inter = Inter({
-  variable: '--font-sans',
-  subsets: ['latin'],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: '--font-mono',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://zoolabs.io'),
@@ -37,9 +29,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // The Zen variables ride on <html> so they resolve on the same element as the
+  // --font-sans/--font-mono in globals.css that reference them.
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>{children}</body>
+    <html lang="en" className={`dark ${Zen.variable} ${ZenMono.variable}`}>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
