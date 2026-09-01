@@ -1,0 +1,9 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+
+overrides:
+  '@hanzo/gui': 8.3.1
+  '@react-native/normalize-colors': 0.83.2
+  react-is: 18.3.1
